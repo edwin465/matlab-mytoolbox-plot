@@ -7,8 +7,8 @@ function pv=fun_subplot_position(nrow,ncolumn,dx,dy,istest,x0,y0)
 % dx: horizontal distance between two subplots (Default: 0.1)
 % dy: vertical distance between two subplots (Default: 0.1)
 % istest: draw the plot for check or not? (1: check, Default: 0) 
-% x0: initial horizontal bias of the first subplot (Default: 0.05)  
-% y0: initial vertical bias of the first subplot (Default: 0.08) 
+% x0: horizontal margin (Default: 0.05)  
+% y0: vertical margin (Default: 0.08) 
 %
 % Example:
 % 
