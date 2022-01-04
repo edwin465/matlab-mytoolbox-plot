@@ -19,10 +19,17 @@
 % x0: initial horizontal bias of the first subplot (Default: 0.05)  
 % y0: initial vertical bias of the first subplot (Default: 0.08)  
 %  
-% Example:  
-%   
-% pv = fun_subplot_position(2,2,0.1,0.1,1,0.05,0.05)  
-%  
+```  
+
+```
+>> pv = fun_subplot_position(2,2,0.1,0.1,1,0.05,0.05)  
+
+pv =
+
+    0.0500    0.5500    0.4000    0.4000
+    0.5500    0.5500    0.4000    0.4000
+    0.0500    0.0500    0.4000    0.4000
+    0.5500    0.0500    0.4000    0.4000
 ```
 
 The corresponding plot is shown below:  
