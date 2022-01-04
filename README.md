@@ -64,5 +64,19 @@ function fun_errorbarchart(dat_x,dat_y1,dat_y2,test_pval0,title_str,x_lab_str,y_
 % legend_str2: string (legend of the dat_y2)  
 % star_ypos: the ceiling position of the statistical results  
 % plot_pos: the position of the plot (1 x 4)  
+%
+```
+
+```
+M=10;N=4;dat_x=[1:N];dat_y1=rand(M,N);dat_y2=rand(M,N);     
+title_str='y1 vs y2';       
+x_lab_str='Num. of testings';       
+y_lab_str='Score';  
+legend_str1='y1';legend_str2='y2';  
+test_pval0=1;  
+fun_errorbarchart(dat_x,dat_y1,dat_y2,test_pval0,title_str,x_lab_str,y_lab_str,legend_str1,legend_str2)  
 ```  
+
+The corresponding plot is shown below (P.S. the data is randomly generated, so this example outputs different plot everytime)
+![result3](https://github.com/edwin465/matlab-mytoolbox-plot/blob/main/subplot_plot.png)
 
