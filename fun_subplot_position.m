@@ -6,7 +6,7 @@ function pv=fun_subplot_position(nrow,ncolumn,dx,dy,istest,x0,y0)
 % ncolumn: number of columns
 % dx: horizontal distance between two subplots (Default: 0.1)
 % dy: vertical distance between two subplots (Default: 0.1)
-% istest: draw the test plot for check or not? (1: check, default val.: 0) 
+% istest: draw the plot for check or not? (1: check, Default: 0) 
 % x0: initial x-axis of the first subplot (Default: 0.05)
 % y0: initial y-axis of the first subplot (Default: 0.08)
 %
