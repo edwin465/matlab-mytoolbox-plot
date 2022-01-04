@@ -24,7 +24,11 @@
 %  
 ```
 
+The corresponding plot is shown below:  
+![result1](https://github.com/edwin465/matlab-mytoolbox-plot/blob/main/fun_subplot_position_plot.png)
 
+If we use `subplot()` to plot the results, then we would get the following plot:
+![result2](https://github.com/edwin465/matlab-mytoolbox-plot/blob/main/subplot_plot.png)
 
 ## fun_errorbarchart
 在科技文章，比較兩個樣本之間的差異是經常遇到的事情，我們可以使用Matlab的errorbar圖、bar圖和統計檢驗的方法去比較他們的差異，可惜的是，Matlab沒有一個可以同時把這些内容繪畫出來的函數；
