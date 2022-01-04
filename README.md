@@ -78,5 +78,5 @@ fun_errorbarchart(dat_x,dat_y1,dat_y2,test_pval0,title_str,x_lab_str,y_lab_str,l
 ```  
 
 The corresponding plot is shown below (P.S. the data is randomly generated, so this example outputs different plot everytime)
-![result3](https://github.com/edwin465/matlab-mytoolbox-plot/blob/main/subplot_plot.png)
+![result3](https://github.com/edwin465/matlab-mytoolbox-plot/blob/main/fun_errorbarchart_plot.png)
 
