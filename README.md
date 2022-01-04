@@ -7,7 +7,8 @@
 使用這個`fun_subplot_position()`函數，可以設置subplot之間的距離，然後自動計算subplot函數的position vector，使不同subplot之間的結果集中一些。
 
 ### How to use `fun_subplot_position()`?
-```function pv=fun_subplot_position(nrow,ncolumn,dx,dy,istest,x0,y0)   
+```
+function pv=fun_subplot_position(nrow,ncolumn,dx,dy,istest,x0,y0)   
 % This function is used to calculate the customized position vectors 'pv'  
 % for the Matlab function: subplot('Position',pv)  
 %  
