@@ -1,5 +1,6 @@
 # matlab-mytoolbox-plot
-基於matlab畫圖函數的二次開發，便於展示一些計算結果，暫時分享兩個常用的函數：`fun_subplot_position()`和`fun_errorbarchart()`
+通過對matlab畫圖函數進行二次開發，以便可以快速和簡單地展示一些計算結果。  
+我在這裏分享兩個我編寫的畫圖函數：`fun_subplot_position()`和`fun_errorbarchart()`
 
 ## fun_subplot_position
 使用Matlab自帶的subplot()，不同subplot之間的默認距離有時候會覺得太大，使得繪圖内容顯得有點小，不利於觀看結果;
@@ -15,8 +16,8 @@
 % dx: horizontal distance between two subplots (Default: 0.1)  
 % dy: vertical distance between two subplots (Default: 0.1)  
 % istest: draw the plot for check or not? (1: check, Default: 0)  
-% x0: initial x-axis of the first subplot (Default: 0.05)  
-% y0: initial y-axis of the first subplot (Default: 0.08)  
+% x0: initial horizontal bias of the first subplot (Default: 0.05)  
+% y0: initial vertical bias of the first subplot (Default: 0.08)  
 %  
 % Example:  
 %   
