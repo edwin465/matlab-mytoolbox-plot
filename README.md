@@ -1,6 +1,6 @@
 # matlab-mytoolbox-plot
 通過對matlab畫圖函數進行二次開發，以便可以快速和簡單地展示一些計算結果。  
-我在這裏分享兩個我編寫的函數：`fun_subplot_position()`和`fun_errorbarchart()`
+我在這裏分享三個我編寫的函數：`fun_subplot_position()`，`fun_errorbarchart()`和`fun_barchart_errorbar_plot()`
 
 ## fun_subplot_position
 使用Matlab自帶的subplot()，不同subplot之間的默認距離有時候會覺得太大，使得繪圖内容顯得有點小，不利於觀看結果;
@@ -43,9 +43,9 @@ The horizontal margin is too large in the second figure. If we use this figure i
 
 Hence, it is recommended to use the `fun_subplot_position()` to customize the position of each subplot (as shown in the first figure). Then there is no need to remove the margin anymore.
 
-## fun_errorbarchart
-在科技文章，比較兩個樣本之間的差異是經常遇到的事情，我們可以使用Matlab的errorbar圖、bar圖和統計檢驗的方法去比較他們的差異，可惜的是，Matlab沒有一個可以同時把這些内容繪畫出來的函數；
-因此，我編寫了一個這樣的函數`fun_errorbarchart()`去完成這個事情，
+## fun_errorbarchart and fun_barchart_errorbar_plot
+在科技文章，比較不同算法結果之間的差異是經常遇到的事情，我們可以使用Matlab的errorbar圖、bar圖和統計檢驗的方法去比較他們的差異，可惜的是，Matlab沒有一個可以同時把這些内容繪畫出來的函數；
+因此，我編寫了下面兩個函數`fun_errorbarchart()`和`fun_barchart_errorbar_plot()`去完成這個任務，
 
 ### How to use `fun_errorbarchart()`?  
 ```
@@ -87,3 +87,45 @@ fun_errorbarchart(dat_x,dat_y1,dat_y2,test_pval0,title_str,x_lab_str,y_lab_str,l
 The corresponding plot is shown below (P.S. the data is randomly generated, so this example outputs different plot everytime)
 ![result3](https://github.com/edwin465/matlab-mytoolbox-plot/blob/main/fun_errorbarchart_plot.png)
 
+### How to use `fun_barchart_errorbar_plot()`?
+```
+function fun_barchart_errorbar_plot(data, N1,N2,color_rgb,title_str,x_lab_str,y_lab_str,legend_str,x_tick_str)  
+
+% data: M x (N1xN2)   
+% data = [A1 A2 A3 ... A_N1], A_i: M x N2    
+% M: num. of subjects/samples/repetitons (for average),  
+% N1: num. of algorithms (num. of bars in barchart), 1<=N1<=6  
+% N2: num. of data lengths/time-window lengths (xticks in barchart)  
+% color_rgb: bar color (RGB)  
+% title_str: string (title of the plot)  
+% x_lab_str: string (x-label)    
+% y_lab_str: string (y-label)    
+% legend_str: cell string (for legend())    
+% x_tick_str: cell string (for xticklabels())   
+```  
+
+```
+num_of_sub=12;num_of_method=4;num_of_tw=7;
+data=rand(num_of_sub,num_of_method*num_of_tw)*100;
+[M,N]=size(data);   
+color_rgb=[0 0 0;   
+     1 0 0;  
+     0 0 1;  
+     0 204/255 0;  
+     153/255 153/255 0;  
+     1 0 1;  
+     1 128/255 0;  
+     0 128/255 1;  
+     0.9 0 0;  
+     1 102/255 1;  
+     0 1 0];   
+title_str='Comparison';  
+x_lab_str='TW (s)';  
+y_lab_str='Accuracy (%)';  
+legend_str={'M1','M2','M3','M4','M5','M6'};  
+x_tick_str={'0.5','1.0','1.5','2.0','2.5','3.0','3.5'};  
+fun_barchart_errorbar_plot(data,num_of_method,num_of_tw,color_rgb,title_str,x_lab_str,y_lab_str,legend_str(1:num_of_method),x_tick_str);
+```  
+
+The corresponding plot is shown below (P.S. the data is randomly generated, so this example outputs different plot everytime)
+![result4](https://github.com/edwin465/matlab-mytoolbox-plot/blob/main/fun_barchart_errorbar_plot.png)  
