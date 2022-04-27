@@ -91,13 +91,13 @@ if d1==2
     end
     for n=1:size(dat_x,2)
         if test_pval(n)<0.001
-            plot(dat_x(n)-0.01,star_ypos,'p','markersize',10,'MarkerFaceColor','k','MarkerEdgeColor','k');
+            plot(dat_x(n)-delta_x,star_ypos,'p','markersize',10,'MarkerFaceColor','k','MarkerEdgeColor','k');
             plot(dat_x(n),star_ypos,'p','markersize',10,'MarkerFaceColor','k','MarkerEdgeColor','k');
-            plot(dat_x(n)+0.01,star_ypos,'p','markersize',10,'MarkerFaceColor','k','MarkerEdgeColor','k');
+            plot(dat_x(n)+delta_x,star_ypos,'p','markersize',10,'MarkerFaceColor','k','MarkerEdgeColor','k');
             
         elseif test_pval(n)<0.01
-            plot(dat_x(n)-0.01,star_ypos,'p','markersize',10,'MarkerFaceColor','k','MarkerEdgeColor','k');
-            plot(dat_x(n)+0.01,star_ypos,'p','markersize',10,'MarkerFaceColor','k','MarkerEdgeColor','k');
+            plot(dat_x(n)-delta_x,star_ypos,'p','markersize',10,'MarkerFaceColor','k','MarkerEdgeColor','k');
+            plot(dat_x(n)+delta_x,star_ypos,'p','markersize',10,'MarkerFaceColor','k','MarkerEdgeColor','k');
             
         elseif test_pval(n)<0.05
             plot(dat_x(n),star_ypos,'p','markersize',10,'MarkerFaceColor','k','MarkerEdgeColor','k');
@@ -110,7 +110,7 @@ if d1==2
     ylabel(y_lab_str);
     xticks(dat_x);
     xlim([dat_x(1)-(dx/2) dat_x(end)+(dx/2)]);
-    ylim([0 max(dat_mu(:))+1.1*max(dat_sd(:))]);
+    ylim([0 star_ypos*1.1]);
     set(gca,'fontsize',font_size,'linewidth',2);
 else
     disp('check the dimension of input');
